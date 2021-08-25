@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fruit shop</title>
+    <link rel="stylesheet" href="N2.css">
+</head>
+<body>
+    <h1>Welcome to the best fruit shop</h1>
+    <div>
+        <div id="s">select here :</div><br>
+ <select id="fruits" onchange="doSomething()" class="f">
+<option>
+    banana
+</option>
+<option>
+    apple
+</option>
+<option>
+    cherry
+</option>
+<option>
+     lemon
+</option>
+    </select><br><br>
+    <div id="k">kg quantity : <input type="text" id="kg"></div><br><br>
+    <button onclick="calc()" class="b">calculate</button><br><br>
+   <div id="t">total price :</div><br><input type="text" id="totalprice">
+   <script>
+
+       const fruits = document.getElementById("fruits").value;
+       let price= 0;
+
+function doSomething(){
+if (document.getElementById("fruits").value == "banana"){
+    price = 5;
+}
+else if (document.getElementById("fruits").value == "apple"){
+    price = 7;
+}
+else if (document.getElementById("fruits").value == "cherry"){
+    price = 8;
+}
+else if (document.getElementById("fruits").value == "lemon"){
+    price =10;
+}
+}
+let kg = document.getElementById('kg');
+function calc(){
+    var kgNum = +kg.value;
+    console.log(kgNum);
+    var priceNum =+price;
+    console.log(priceNum);
+    const totalprice = kgNum*priceNum;
+    console.log(totalprice);
+    document.getElementById('totalprice').value=totalprice;
+}
+
+
+   </script>
+     <h2>Fresh fruit every day!</h2>
+   </div>
+</body>
+</html>
